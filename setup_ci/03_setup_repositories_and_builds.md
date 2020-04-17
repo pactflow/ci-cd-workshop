@@ -16,7 +16,7 @@
     git clone git@github.com:<YOUR_GITHUB_USERNAME>/example-provider.git
     ```
 
-[Next](./setup_ci/04_configure_consumer_and_provider.md)
+[Next](./04_configure_consumer_and_provider.md)
 
 [example-consumer]: https://github.com/pactflow/example-consumer
 [example-provider]: https://github.com/pactflow/example-provider

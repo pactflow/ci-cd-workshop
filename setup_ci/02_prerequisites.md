@@ -12,6 +12,6 @@
 
 :warning: Note: these instructions have been written for and tested in a bash shell on Mac. They should work the same on Linux. If you are using Windows, then you will need to know how to run git/make/node CLI commands, or pair with someone who does.
 
-[Next](./setup_ci/03_setup_repositories_and_builds.md)
+[Next](./03_setup_repositories_and_builds.md)
 
 [travis-ci]: https://travis-ci.com
