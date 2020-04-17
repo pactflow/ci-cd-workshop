@@ -6,7 +6,7 @@ Install, run and test the consumer and provider applications in a local developm
 
 ## Prerequisites
 
-* Github, Travis CI and Pactflow set up according to the instructions in the [Setup CI](./SETUP_CI.md) page.
+* Github, Travis CI and Pactflow set up according to the instructions in the [Setup CI](./setup_ci/01_introduction.md) page.
 * Node.
 
 ## Install dependencies
