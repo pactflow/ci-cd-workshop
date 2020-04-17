@@ -2,11 +2,10 @@
 
 The source repositories are configured to use the Pactflow Github and Travis accounts, and the public broker at test.pact.dius.com.au. You will need to update these settings to point to your own accounts.
 
-1. Clone your forked example repositories on to your local machine.
+1. Clone your forked example-consumer repository on to your local machine.
 
     ```
     git clone git@github.com:<YOUR_GITHUB_USERNAME>/example-consumer.git
-    git clone git@github.com:<YOUR_GITHUB_USERNAME>/example-provider.git
     ```
 
 1. In `.travis.yml`, set `PACT_BROKER_BASE_URL` to the base URL of your own Pactflow account (you will have received an email with this information).
@@ -35,6 +34,8 @@ Note:
 * The environment variable must be encrypted in the context of the repository to which it will be added, so you can't just reuse the output of the encrypt step from the consumer project.
 
 After you have pushed your changes to `.travis.yml`, the provider pipeline will run, fetching and verifying the configured pacts from your Pactflow account, and publishing the results back. The `can-i-deploy` command will pass, and allow the provider to be deployed.
+
+## Back to the consumer
 
 :white_check_mark: If you would like to see all your builds go green, you can re-trigger the consumer build by selecting "More options" > "Trigger build" > "Trigger custom build".
 
