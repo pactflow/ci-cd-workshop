@@ -2,6 +2,13 @@
 
 The source repositories are configured to use the Pactflow Github and Travis accounts, and the public broker at test.pact.dius.com.au. You will need to update these settings to point to your own accounts.
 
+1. Clone your forked example repositories on to your local machine.
+
+    ```
+    git clone git@github.com:<YOUR_GITHUB_USERNAME>/example-consumer.git
+    git clone git@github.com:<YOUR_GITHUB_USERNAME>/example-provider.git
+    ```
+
 1. In `.travis.yml`, set `PACT_BROKER_BASE_URL` to the base URL of your own Pactflow account (you will have received an email with this information).
 1. To update the encrypted PACT_BROKER_TOKEN you will need to use the Travis CI CLI which is released as a Rubygem. To avoid having to install yet another dependency, we are using the `lirantal/travis-cli` docker container, which is maintained by a long time Pact fan and user, the awesome [@lirantal](https://github.com/lirantal).
     1. Log in to your Pactflow account (`https://<your-subdomain>.pact.dius.com.au`), and go to Settings > API Tokens.

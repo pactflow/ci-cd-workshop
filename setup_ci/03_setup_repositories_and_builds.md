@@ -8,13 +8,7 @@
     1. Choose "All" or select the "example-consumer" and "example-provider" repositories.
     1. When your screen updates, you should see a list of repositories under "GitHub Apps Integration
 ". Click on the example-consumer item, and it will take you to the Travis build page.
-    1. Click on "More options" > "Trigger build" > "Trigger custom build". The build will fail with an authentication error when it tries to publish the pact! That's expected. We need to update the environment variables to point it at your new Pactflow account.
-1. Clone your forked example repositories on to your local machine.
-
-    ```
-    git clone git@github.com:<YOUR_GITHUB_USERNAME>/example-consumer.git
-    git clone git@github.com:<YOUR_GITHUB_USERNAME>/example-provider.git
-    ```
+    1. Click on "More options" > "Trigger build" > "Trigger custom build". The build will fail with an authentication error when it tries to publish the pact - that's expected. We need to update the environment variables to point it at your new Pactflow account.
 
 [Next](./04_configure_consumer_and_provider.md)
 
