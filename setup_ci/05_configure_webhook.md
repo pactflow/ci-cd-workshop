@@ -7,7 +7,7 @@ To ensure that the verification step is run whenever a pact changes, we need to 
     1. Select the "Settings" tab.
     1. Under the API Authentication section, click "COPY TOKEN".
 
-1. Create a Pactflow secret for the Travis token. The following steps can be run from your local machine, but you can also do this through the Pactflow UI.
+1. Create a Pactflow secret for the Travis token. The following commands can be run from your local machine, but you can also do this through the Pactflow UI.
 
     ```
     export TRAVIS_TOKEN=<paste your travis token here>
