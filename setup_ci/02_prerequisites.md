@@ -10,7 +10,7 @@
     1. Click on your profile picture in the top right of your Travis Dashboard, click Settings and then the green Activate button. See https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci-using-github for more instructions if you get stuck.
 - [ ] A Pactflow account. Sign up for a free developer account [here](https://pactflow.io/pricing/).
 
-:warning: Note: these instructions have been written for and tested in a bash shell on Mac. They should work the same on Linux. If you are using Windows, then you will need to know how to run git/make/node CLI commands, or pair with someone who does.
+:warning: Note: these instructions have been written for, and tested, in a bash shell on Mac. They should work correctly on Linux. If you are using Windows, then you will need to know how to run git/make/node CLI commands, or pair with someone who does.
 
 [Next](./03_setup_repositories_and_builds.md)
 
