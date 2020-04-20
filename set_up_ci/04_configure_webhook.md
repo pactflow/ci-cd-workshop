@@ -1,4 +1,4 @@
-## Configure webhook
+## 4. Configure webhook
 
 To ensure that the verification step is run whenever a pact changes, we need to configure a webhook to trigger a provider verification build in Travis CI. The webhook will need an authentication token to be able to make this call to the Travis API. We don't want the Travis token to be stored in clear text in the webhook, so we will create a secret in Pactflow to contain token.
 
@@ -36,6 +36,6 @@ To ensure that the verification step is run whenever a pact changes, we need to 
 
 1. Verify that the pact verification build for the provider is running correctly by opening [Travis CI][travis-ci] and checking the output of the triggered build.
 
-[Next](./06_conclusion.md)
+[Next](./05_conclusion.md)
 
 [travis-ci]: https://travis-ci.com
