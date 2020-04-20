@@ -1,4 +1,4 @@
-# Setup
+# Setup CI/CD
 
 ## Goal
 
