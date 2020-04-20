@@ -11,6 +11,6 @@
 
 :warning: Note: these instructions have been written for, and tested, in a bash shell on Mac. They should work correctly on Linux. If you are using Windows, then you will need to know how to run git/make/node CLI commands, or pair with someone who does.
 
-[Next](./03_fork_and_clone_the_repositories.md)
+[Next](./02_fork_and_clone_the_repositories.md)
 
 [travis-ci]: https://travis-ci.com

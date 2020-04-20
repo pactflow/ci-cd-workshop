@@ -14,7 +14,7 @@
     npm install
     ```
 
-[Next](./04_configure_the_builds_in_travis_ci.md)
+[Next](./03_configure_the_builds_in_travis_ci.md)
 
 [example-consumer]: https://github.com/pactflow/example-consumer
 [example-provider]: https://github.com/pactflow/example-provider

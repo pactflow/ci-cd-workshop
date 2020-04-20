@@ -36,6 +36,6 @@ To ensure that the verification step is run whenever a pact changes, we need to 
 
 1. Verify that the pact verification build for the provider is running correctly by opening [Travis CI][travis-ci] and checking the output of the triggered build.
 
-[Next](./07_conclusion.md)
+[Next](./06_conclusion.md)
 
 [travis-ci]: https://travis-ci.com
