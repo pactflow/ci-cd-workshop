@@ -2,7 +2,7 @@
 
 ## Goal
 
-* To understand some approaches for making changes to a pact while ensuring continuous delivery is supported.
-* To understand the various points at which each build interacts with Pactflow
+* To understand some approaches for implementing new features for an integration following a "consumer driven contracts" process, while ensuring continuous delivery is supported.
+* To understand the various points at which each build interacts with Pactflow.
 
-[travis-ci]: https://travis-ci.com
+[Next](./00_prerequisites.md)

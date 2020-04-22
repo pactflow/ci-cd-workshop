@@ -31,6 +31,8 @@ const baseOpts = {
 const fetchPactsDynamicallyOpts = {
   ...,
   provider: "pactflow-example-provider",
-  consumerVersionTag: ['master', 'prod'],
+  consumerVersionSelectors: [{ tag: 'master', latest: true }, { tag: 'prod', latest: true } ],
 }
 ```
+
+[Next](./01_how_to_break_everything.md)
