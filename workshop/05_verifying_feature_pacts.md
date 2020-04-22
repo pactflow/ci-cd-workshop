@@ -27,16 +27,16 @@ A "work in progress" pact is a pact that is the latest for its tag that does not
 
 The verification task can be configured to automatically include work in progress pacts, so that the consumer team can get feedback on their changed pacts without having to wait on action from the provider team.
 
-1. Open `src/product/product.pact.test.js` and in the options for the dynamically fetched pacts, add `includeWipPactsSince: "2020-01-01"`
+1. Open `src/product/product.pact.test.js` and in the options for the dynamically fetched pacts, add `includeWipPactsSince: "2020-01-01"` 
 
-1. Run `make test` and you will see that the `feat/new-field` pact has been included in the verifications, running in pending mode.
+2. Run `make test` and you will see that the `feat/new-field` pact has been included in the verifications, running in pending mode.
 
-1. Commit and push
+3. Commit and push
 
-1. Open the provider build in Travis CI and wait for the successful verification result for `feat/new-field` to be be published.
+4. Open the provider build in Travis CI and wait for the successful verification result for `feat/new-field` to be be published.
   * :arrow_right: Note that the provider has now successfully deployed this change to production, so the consumer is now free to release their code.
 
-1. On your local machine, run `make test` - you will now see that the `feat/new-field` pact is not included, as it is no longer a work in progress pact.
+5. On your local machine, run `make test` - you will now see that the `feat/new-field` pact is not included, as it is no longer a work in progress pact.
 
 ### Conclusion
 
