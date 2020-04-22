@@ -7,14 +7,15 @@
 
 ### Tag configuration
 
+Tags are used to wire up the consumer project to the provider project and make sure we are verifying the right pacts.
+
 In the [publish.pact.js](https://github.com/pactflow/example-consumer/blob/master/publish.pact.js) file in the consumer project, we tag the consumer version with the name of the branch.
 
 ```js
 
-const branch = process.env.TRAVIS_BRANCH;
 const opts = {
   ...,
-  tags: [branch]
+  tags: [process.env.TRAVIS_BRANCH]
 };
 ```
 
@@ -22,9 +23,14 @@ In the [src/product.pact.test.js](https://github.com/pactflow/example-provider/b
 
 ```js
 
+const baseOpts = {
+  ...,
+  providerVersionTag: process.env.TRAVIS_BRANCH
+}
+
 const fetchPactsDynamicallyOpts = {
+  ...,
   provider: "pactflow-example-provider",
   consumerVersionTag: ['master', 'prod'],
-  ...
 }
 ```
