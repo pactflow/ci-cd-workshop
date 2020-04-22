@@ -1,4 +1,4 @@
-# Exercise 1 - Making changes to the pact
+# Consumer driven contracts using Pact and Pactflow
 
 ## Goal
 
