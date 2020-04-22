@@ -2,12 +2,16 @@
 
 Go to the `Settings > API Tokens` page in your Pactflow account, and copy the read only developer token.
 
-In the terminal for the provider project, run:
+Create a `.env` file in the root of your project and add:
 
 ```
-export PACT_BROKER_BASE_URL=<the base URL of your Pactflow account>
-export PACT_BROKER_TOKEN=<the read only token you copied from your settings page>
+PACT_BROKER_BASE_URL=<the base URL of your Pactflow account>
+PACT_BROKER_TOKEN=<the read only token you copied from your settings page>
+```
 
+Then run:
+
+```
 make test
 ```
 

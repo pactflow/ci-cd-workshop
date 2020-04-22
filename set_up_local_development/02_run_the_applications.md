@@ -4,9 +4,9 @@ Start up the provider API by running `npm run start`.
 
 Open a separate terminal for the consumer.
 
-Before starting the consumer, export the location of the API by running:
+Before starting the consumer, create a `.env` file in the root of the project and add:
 
-`export REACT_APP_API_BASE_URL=http://localhost:8080`
+`REACT_APP_API_BASE_URL=http://localhost:8080`
 
 Then run:
 
