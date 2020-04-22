@@ -12,10 +12,9 @@ It uses the Pactflow [example-consumer][example-consumer] and [example-provider]
 
 ## Table of contents
 
-* [Setup CI](./set_up_ci/README.md) - covers forking and configuring the example projects to get a working CI/CD pipeline.
-* [Setup development environment](./set_up_local_development/README.md) - get the consumer and provider projects running and building on your local development machine.
-* [Exercise 1](./EXERCISE_01.md) - making changes to the pact
+* [Setup CI](/set_up_ci/README.md) - covers forking and configuring the example projects to get a working CI/CD pipeline.
+* [Setup development environment](/set_up_local_development/README.md) - get the consumer and provider projects running and building on your local development machine.
+* [Workshop](/workshop) - how to implement change to an integration following a consumer driven contracts approach
 
 [example-consumer]: https://github.com/pactflow/example-consumer
 [example-provider]: https://github.com/pactflow/example-provider
-
