@@ -20,6 +20,10 @@ Refresh the example pact page in Pactflow to see that the `feat/new-field` pact 
 
 The most elegant solution for this is to create a webhook for the 'provider verification succeeded' event. Some common approaches are to use chat notifications or Github/Bitbucket commit statuses that show up in the PR page for a branch. You can read more about that here: http://blog.pact.io/2018/07/16/publishing-pact-verification-statuses-to-github/
 
+### Expected state by the end of this step
+
+* The new feature deployed to production for both consumer and provider.
+
 ### Conclusion
 
 Even though the new expectations from the consumer come first, the provider still has to release the code to support the new feature before the new features in the consumer can be released.

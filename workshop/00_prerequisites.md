@@ -3,6 +3,19 @@
 * CI/CD pipelines for the consumer and provider as per the [Setup CI/CD page](/set_up_ci/README.md)
 * A working local development set up as per the [Setup development environment](/set_up_local_development/README.md) page.
 * Both consumer and provider builds in Travis CI should both be passing on master.
+* Suggested window configuration:
+    * In [Travis CI][travis-ci]:
+        * One tab for the example-consumer build
+        * One tab for the example-provider build
+    * In Pactflow
+        * A tab for the example pact dashboard
+    * In your editor of choice:
+        * One window for the example-consumer
+        * One window for the example-provider
+    * In your terminal of choice:
+        * One shell for the example-consumer
+        * One shell for the example-provider
+    * Close everything else that you can! It can get confusing switching backwards and forwards between all the windows in the workshop.
 * Have a look at the configuration in the consumer and provider projects that deals with the *tags*. Read more below.
 
 ### Tag configuration
@@ -36,3 +49,5 @@ const fetchPactsDynamicallyOpts = {
 ```
 
 [Next](./01_how_to_break_everything.md)
+
+[travis-ci]: https://travis-ci.com

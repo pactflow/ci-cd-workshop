@@ -27,6 +27,12 @@ Let's make our changes on a branch this time.
     * The consumer build will pass, as we don't deploy from non-master branches, so `can-i-deploy` won't run.
     * The webhook-triggered pact verification build will still fail - that's ok, as it doesn't stop the provider from deploying.
 
+### Expected state by the end of this step
+
+* A passing `master` consumer build in Travis CI.
+* A passing `feat/new-field` consumer build in Travis CI.
+* A `master` pact in Pactflow with a successful verification.
+* A `feat/new-field` pact in Pactflow that hasn't yet been verified.
 
 ### Conclusion
 

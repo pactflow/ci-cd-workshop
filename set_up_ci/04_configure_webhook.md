@@ -36,6 +36,10 @@ To ensure that the verification step is run whenever a pact changes, we need to 
 
 1. Verify that the pact verification build for the provider is running correctly by opening [Travis CI][travis-ci] and checking the output of the triggered build.
 
+## Expected state by the end of this step
+
+Both consumer and provider builds passing, and a webhook that has been tested and shown to trigger a pact verification build of the provider.
+
 [Next](./05_conclusion.md)
 
 [travis-ci]: https://travis-ci.com

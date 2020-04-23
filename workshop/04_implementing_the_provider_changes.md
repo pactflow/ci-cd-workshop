@@ -60,6 +60,13 @@ The next step is to implement the changes that have been requested in the pact.
 
 1. Commit and push your changes.
 
+### Expected state by the end of this step
+
+* A provider that implements the features required by the `feat/new-field` pact on its `master` branch.
+* The new version of the provider is "deployed" to production.
+* A passing provider build in Travis CI.
+* A `feat/new-field` pact in Pactflow that still does not have a verification result.
+
 ## Discussion
 
 The `master` provider is now compatible with the `feat/new-field` pact. However, there is no verification result published for the `feat/new-field` pact, because it was only verified on a development machine, and we don't typically publish verification results from dev machines.

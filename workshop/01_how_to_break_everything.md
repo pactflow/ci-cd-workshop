@@ -24,6 +24,20 @@ This is because the provider is configured to verify the latest `master` pact, s
 
 You can demonstrate this by running a provider build in Travis by selecting "More options" > "Trigger build" > "Trigger custom build".
 
+### Check the pact's status in Pactflow
+
+1. Open up the pact in Pactflow. You'll see that there is a pact tagged `master` with a failed verification result.
+
+1. Click on "VIEW PACT" and you'll see that each interaction has a status next to it.
+
+1. Expand the failing interaction, and you'll see the field level mismatches.
+
+### Expected state by the end of this step
+
+* A consumer build that is failing at the `can-i-deploy` step in Travis CI.
+* A provider build that is failing during verification in Travis CI.
+* A `master` pact in Pactflow that has a failed verification result.
+
 ### Conclusion
 
 Making changes to the pact for the on the master branch can break both consumer and provider builds, and may stop both projects from being able to deploy.

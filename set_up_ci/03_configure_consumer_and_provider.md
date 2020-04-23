@@ -33,4 +33,8 @@ After you have pushed your changes to `.travis.yml`, the provider pipeline will 
 
 :white_check_mark: If you would like to see all your builds go green, you can re-trigger the consumer build by selecting "More options" > "Trigger build" > "Trigger custom build".
 
+## Expected state by the end of this step
+
+Both consumer and provider builds passing.
+
 [Next](./04_configure_webhook.md)

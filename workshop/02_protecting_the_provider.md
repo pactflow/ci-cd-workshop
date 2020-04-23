@@ -31,6 +31,10 @@ Let's see what happens if the provider makes a change that would break its contr
 
 1. Discard your changes.
 
+### Expected state by the end of this step
+
+A provider build that is passing, with a failing `master` pact in pending state.
+
 ### Conclusion
 
 Enabling the pending pacts feature for verifications stops changed pacts from breaking provider builds, while ensuring that the provider cannot make changes that break existing consumers.

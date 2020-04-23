@@ -27,16 +27,24 @@ A "work in progress" pact is a pact that is the latest for its tag that does not
 
 The verification task can be configured to automatically include work in progress pacts, so that the consumer team can get feedback on their changed pacts without having to wait on action from the provider team.
 
+:arrow_right: Something that is important to understand about the calculation of the WIP pacts list is that it is *calculated based on the tag that will be applied to the provider version*. For example, if a pact only has a successful verification from a provider version with tag `feat/x`, it will still be pending for a provider version with tag `master` (and every other tag).
+
+The reason for this is that if support for a new feature pact is added on a `feat/x` branch of the provider, you don't want your `master` build to suddenly break
+
 1. Open `src/product/product.pact.test.js` and in the options for the dynamically fetched pacts, add `includeWipPactsSince: "2020-01-01"`
 
-1. Run `make test` and you will see that the `feat/new-field` pact has been included in the verifications, running in pending mode.
+1. Run `TRAVIS_BRANCH=master make test` and you will see that the `feat/new-field` pact has been included in the verifications, running in pending mode.
 
 1. Commit and push
 
 1. Open the provider build in Travis CI and wait for the successful verification result for `feat/new-field` to be be published.
-  * :arrow_right: Note that the provider has now successfully deployed this change to production, so the consumer is now free to release their code.
+    * :arrow_right: Note that the provider has now successfully deployed this change to production, so the consumer is now free to release their code.
 
-1. On your local machine, run `make test` - you will now see that the `feat/new-field` pact is not included, as it is no longer a work in progress pact.
+1. On your local machine, run `TRAVIS_BRANCH=master make test` - you will now see that the `feat/new-field` pact is not included, as it is no longer a work in progress pact.
+
+### Expected state by the end of this step
+
+* A `feat/new-field` pact in Pactflow that has a successful verification result from the `master` provider.
 
 ### Conclusion
 
