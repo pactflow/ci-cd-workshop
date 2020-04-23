@@ -35,7 +35,7 @@ The reason for this is that if support for a new feature pact is added on a `fea
 1. In the provider project, open `src/product/product.pact.test.js` and in the options for the dynamically fetched pacts, set `includeWipPactsSince: "2020-01-01"`
 
 1. Run `TRAVIS_BRANCH=master make test` and you will see that the `feat/new-field` pact has been included in the verifications, running in pending mode.
-    * We need to set the `TRAVIS_BRANCH` so that the WIP calculations know which pending pacts to include.
+    * We need to set the `TRAVIS_BRANCH` when running locally so that the WIP calculations know which pending pacts to include.
 
 1. Commit and push
 
