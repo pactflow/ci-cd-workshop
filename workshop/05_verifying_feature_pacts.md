@@ -45,7 +45,7 @@ The reason for this is that if support for a new feature pact is added on a `fea
 
 ### Expected state by the end of this step
 
-* A `feat/new-field` pact in Pactflow that has a successful verification result from the `master` provider.
+* A `feat/new-field` pact in Pactflow that has successful verification results from a version of the provider that has both `master` and `prod` tags.
 
 ### Conclusion
 
