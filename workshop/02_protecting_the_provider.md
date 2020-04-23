@@ -6,6 +6,8 @@ When using Pact with Pactflow, we have a similar concept of a "pending pact". A 
 
 Once a pact has a successful verification result published, it is now considered to be an accepted/supported contract, and any subsequent failure can only be as a result of the provider itself changing. Once a pact has left pending state, verification failures *will* cause the provider build to fail.
 
+Something important to note about the pending calculation is that *it is based on the tag that will be applied to the provider version*. For example, once a pact has a successful verification from a provider version with tag `master`, it will cease to be pending for subsequent `master` versions, but would still be pending for a `feat/x` branch of the provider (until the first successful `feat/x` verification was published, etc.)
+
 For further reading: http://blog.pact.io/2020/02/24/how-we-have-fixed-the-biggest-problem-with-the-pact-workflow/
 
 ### Enable 'pending pacts' for the provider

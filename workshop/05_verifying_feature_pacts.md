@@ -22,7 +22,7 @@ When a new "feature" pact is created, there are a few ways you could bring that 
 
 ### Work In Progress Pacts
 
-A "work in progress" pact is a pact that is the latest for its tag that does not have any successful verification results (ie. is still in pending state). At this stage in the exercise, the `feat/new-field` pact is still in pending state, so it is considered a "work in progress" pact.
+A "work in progress" pact is a pact that is the latest for its tag that does not have any successful verification results (ie. is still in pending state). At this stage in the exercise, the `feat/new-field` pact is still in pending state for the `master` branch of the provider, so it is considered a "work in progress" pact.
 
 The verification task can be configured to automatically include work in progress pacts, so that the consumer team can get feedback on their changed pacts without having to wait on action from the provider team.
 
