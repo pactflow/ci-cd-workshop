@@ -7,34 +7,54 @@ To ensure that the verification step is run whenever a pact changes, we need to 
     1. Select the "Settings" tab.
     1. Under the API Authentication section, click "COPY TOKEN".
 
-1. Create a Pactflow secret for the Travis token. The following commands can be run from your local machine, but you can also do this through the Pactflow UI.
+1. Create a Pactflow secret for the Travis token.
+    1. In your Pactflow account, click on the Settings icon.
+    1. Select the Secrets tab from the menu on the left.
+    1. Click "ADD SECRET"
+    1. Enter the name `travisToken` and paste the value that you copied earlier.
+    1. Click "CREATE"
 
-    ```
-    export TRAVIS_TOKEN=<paste your travis token here>
-    export PACT_BROKER_BASE_URL=<your Pactflow account base url>
-    export PACT_BROKER_TOKEN=<your read write token>
+1. Create the webhook.
+    1. In your Pactflow account, select the Webhooks tab from the settings page.
+    1. Click "ADD WEBHOOK".
+    1. Set:
+        * Description: `Travis CI webhook for pactflow-example-provider`
+        * Consumer: leave as "ALL"
+        * Provider: select `pactflow-example-provider`
+        * Events: select `Contract published with changed content or tags`
+        * URL: `https://api.travis-ci.com/repo/<YOUR GITHUB ACCOUNT HERE>%2Fexample-provider/requests` (eg. `https://api.travis-ci.com/repo/bethesque%2Fexample-provider/requests`)
+        * Headers:
 
-    make create_travis_token_secret
-    ```
+            ```
+            Content-Type: application/json
+            Accept: application/json
+            Travis-API-Version: 3
+            Authorization: token ${user.travisToken}
+            ```
+        * Body:
 
-1. You can verify that the secret has been created by opening up your Pactflow account, and going to Settings > Secrets.
-
-1. :point_right: At the top of the Makefile, in the `TRIGGER_PROVIDER_BUILD_URL`, replace the word `pactflow` with the name of your github account. :point_left:
-1. Create the webhook by running the following command. You can also do this through the Pactflow UI.
-
-   ```
-   # Assuming that the `PACT_BROKER_BASE_URL` and `PACT_BROKER_TOKEN` from the previous step are still set...
-
-   make create_or_update_travis_webhook
-   ```
-
-1. You can verify that the webhook has been created by opening up your Pactflow account, and going to Settings > Webhooks.
-
-1. Test the webhook. You can either do this though the Pactflow UI or via the CLI.
-    * To test via the CLI, run `make test_travis_webhook`.
-    * To test a webhook through the Pactflow UI, go to Settings > Webhooks and click on the EDIT button for your webhook. At the bottom of the edit screen, click the TEST button.
+            ```
+            {
+              "request": {
+                "message": "Triggered by changed pact for ${pactbroker.consumerName} version ${pactbroker.consumerVersionNumber}",
+                "branch": "master",
+                "merge_mode": "deep_merge_append",
+                "config": {
+                  "env": {
+                    "global": [
+                      "PACT_URL=${pactbroker.pactUrl}"
+                    ]
+                  }
+                }
+              }
+            }
+            ```
+      1. Click the "TEST" button and ensure that it runs successfully.
+      1. Click the "CREATE" button.
 
 1. Verify that the pact verification build for the provider is running correctly by opening [Travis CI][travis-ci] and checking the output of the triggered build.
+
+:arrow_right: Each of the above steps can be automated - you can see the targets for them in the provider's Makefile.
 
 ## Expected state by the end of this step
 
