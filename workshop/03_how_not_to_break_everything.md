@@ -19,7 +19,7 @@ Let's make our changes on a branch this time.
       git checkout -b feat/new-field
     ```
 
-1. Add the new field again (e.g. `color: "red"`), and update the `expect(product).toStrictEqual` to expect the new field and value.
+1. Add the new field to the `expectedProduct` again (e.g. `color: "red"`).
 
 1. Make sure the tests pass locally by running `make test`.
 

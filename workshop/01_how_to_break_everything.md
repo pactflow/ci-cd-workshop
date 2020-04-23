@@ -4,7 +4,7 @@
 
 Let's add a new field to the expectations we have for the product API. We're going to make the change on master, and it's going to break everything. This is an exercise in "what not to do, and why".
 
-1. Open up `src/api.pact.spec.js`, scroll down to the first test, and in the `eachLike` definition for the `body`, add a new field e.g. `color: "red"`. Update the `expect(product).toStrictEqual` to expect the new field and value.
+1. Open up `src/api.pact.spec.js`, scroll down to the first test, and in the `expectedProduct` definition, add a new field e.g. `color: "red"`.
 
 1. Run `make test`. These tests should be green - the consumer code is consistent with its own expectations.
 
