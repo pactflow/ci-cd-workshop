@@ -29,7 +29,7 @@ The verification task can be configured to automatically include work in progres
 
 :arrow_right: Something that is important to understand about the calculation of the WIP pacts list is that it is *calculated based on the tag that will be applied to the provider version*. For example, if a pact only has a successful verification from a provider version with tag `feat/x`, it will still be pending for a provider version with tag `master` (and every other tag).
 
-The reason for this is that if support for a new feature pact is added on a `feat/x` branch of the provider, you don't want your `master` build to suddenly break
+The reason for this is that if support for a new feature pact is added on a `feat/x` branch of the provider, you still want to keep getting the failed verification results from `master` until the `feat/x` branch is merged.
 
 1. Open `src/product/product.pact.test.js` and in the options for the dynamically fetched pacts, add `includeWipPactsSince: "2020-01-01"`
 
