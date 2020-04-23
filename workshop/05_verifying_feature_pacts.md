@@ -17,11 +17,10 @@ When a new "feature" pact is created, there are a few ways you could bring that 
     ```
 
     * This is a reasonably common approach, where the two teams coordinate feature development using matching branch names.
-    * Tags will be deduped by the verification task, so it doesn't matter if you're already on master. If there's no pact with the name of the provider's branch, it won't raise an error.
 
 1. Enable 'work in progress' pacts'
 
-### Enable Work In Progress Pacts
+### Work In Progress Pacts
 
 A "work in progress" pact is a pact that is the latest for its tag that does not have any successful verification results (ie. is still in pending state). At this stage in the exercise, the `feat/new-field` pact is still in pending state, so it is considered a "work in progress" pact.
 
@@ -31,7 +30,9 @@ The verification task can be configured to automatically include work in progres
 
 The reason for this is that if support for a new feature pact is added on a `feat/x` branch of the provider, you still want to keep getting the failed verification results from `master` until the `feat/x` branch is merged.
 
-1. Open `src/product/product.pact.test.js` and in the options for the dynamically fetched pacts, add `includeWipPactsSince: "2020-01-01"`
+### Enable Work In Progress Pacts for the provider
+
+1. In the provider project, open `src/product/product.pact.test.js` and in the options for the dynamically fetched pacts, add `includeWipPactsSince: "2020-01-01"`
 
 1. Run `TRAVIS_BRANCH=master make test` and you will see that the `feat/new-field` pact has been included in the verifications, running in pending mode.
 
