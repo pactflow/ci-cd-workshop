@@ -15,6 +15,12 @@ When a new "feature" pact is created, there are a few ways you could bring that 
     ```js
     consumerVersionSelectors: [{ tag: process.env.TRAVIS_BRANCH, fallbackTag: 'master', latest: true }, { tag: 'prod', latest: true } ],
     ```
+    
+    (or old syntax):
+    
+    ```js
+    consumerVersionTags: [ process.env.TRAVIS_BRANCH, "master", "prod" ]
+    ```
 
     * This is a reasonably common approach, where the two teams coordinate feature development using matching branch names.
 
