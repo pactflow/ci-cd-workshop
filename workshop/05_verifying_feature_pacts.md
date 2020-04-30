@@ -24,7 +24,7 @@ When a new "feature" pact is created, there are a few ways you could bring that 
 
     * This is a reasonably common approach, where the two teams coordinate feature development using matching branch names.
 
-1. Enable 'work in progress' pacts'
+1. Enable 'work in progress' pacts.
 
 ### Work In Progress Pacts
 
