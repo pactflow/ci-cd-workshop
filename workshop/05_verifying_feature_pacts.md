@@ -24,11 +24,15 @@ When a new "feature" pact is created, there are a few ways you could bring that 
 
     * This is a reasonably common approach, where the two teams coordinate feature development using matching branch names.
 
-1. Enable 'work in progress' pacts.
+1. Enable "work in progress" pacts.
 
 ### Work In Progress Pacts
 
-A "work in progress" pact is a pact that is the latest for its tag that does not have any successful verification results (ie. is still in pending state). At this stage in the exercise, the `feat/new-field` pact is still in pending state for the `master` branch of the provider, so it is considered a "work in progress" pact.
+The "work in progress pacts" feature solves the problem of provider teams having to manually update and commit changes to their verification configuration to publish verifications for feature pacts from CI.
+
+When enabled, it will cause the provider to automatically verify, in pending mode, any "outstanding" pacts (ie. ones for which it has not yet published a successful result), as well as the pacts that were explicitly specified in the tag/selector list.
+
+A "work in progress" pact is a pact that is the latest for its tag that does not have any successful verification results (ie. is still pending) for the configured provider tag . At this stage in the exercise, the `feat/new-field` pact is still in pending state for the `master` branch of the provider, so it is considered a "work in progress" pact for master.
 
 The verification task can be configured to automatically include work in progress pacts, so that the consumer team can get feedback on their changed pacts without having to wait on action from the provider team.
 
