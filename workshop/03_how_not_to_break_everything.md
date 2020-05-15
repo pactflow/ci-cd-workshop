@@ -27,15 +27,19 @@ Let's make our changes on a branch this time.
     * The consumer tests will pass, and then the CI build will fail as `can-i-deploy` correctly identifies that this branch is not yet compatible with the API.
     * The webhook-triggered pact verification build will still fail - that's ok, as it doesn't stop the provider from deploying.
 
+:arrow_right: The `can-i-deploy` step acts as a "can I merge?" check when run from a branch. We'll know we're safe to merge this branch into master if/when `can-i-deploy` passes. :arrow_left:
+
 ### Expected state by the end of this step
 
-* A passing `master` consumer build in Travis CI.
-* A failing `feat/new-field` consumer build in Travis CI.
-* A `master` pact in Pactflow with a successful verification.
-* A `feat/new-field` pact in Pactflow that hasn't yet been verified.
+* In Travis CI:
+    * A `master` consumer build that passes and deploys.
+    * A `feat/new-field` consumer build that fails at `can-i-deploy`.
+* In Pactflow:
+    * A `master` pact with a successful verification result.
+    * A `feat/new-field` pact with no verification results.
 
 ### Conclusion
 
-By making changes on a branch of the consumer, and publishing a 'feature pact', we keep our main release branch green, and make sure we're not blocked from deploying.
+By making changes on a branch of the consumer, and publishing a 'feature pact', we keep our main release branch green, and make sure we're not blocked from deploying. The `can-i-deploy` call acts as a "can I merge?" check when we're on a branch.
 
 [Next](./04_implementing_the_provider_changes.md)
